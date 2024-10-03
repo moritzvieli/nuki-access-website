@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Spinner styles */
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#lockControl {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+}
+
+.switch {
+    position: relative;
+    width: 80px;
+    height: 200px;
+    background-color: #ddd;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.switch.locked {
+    background-color: #f44336;
+}
+
+.switch.unlocked {
+    background-color: #4caf50;
+}
+
+.toggle {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch.unlocked .toggle {
+    top: 130px;
+}
+
+#switchIcon {
+    font-size: 30px;
+    color: #333;
+    min-width: 30px;
+    text-align: center;
+}
+
+#statusText {
+    font-size: 24px;
+    color: #333;
+    width: 300px; /* Fixed width */
+    text-align: center;
+    margin-top: 20px; /* Adds vertical space between switch and text */
+}
